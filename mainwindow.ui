@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Выберите проект для импорта</string>
+   <string>Выберите  файл для импорта</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -21,7 +21,7 @@
     <item>
      <widget class="QPushButton" name="pushButton">
       <property name="text">
-       <string>ВЫБРАТЬ ПРОЕКТ</string>
+       <string>ВЫБРАТЬ ФАЙЛ</string>
       </property>
      </widget>
     </item>
