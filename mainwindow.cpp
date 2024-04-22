@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QDebug>
 #include <iostream>
+#include <QTextStream>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -17,7 +18,10 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    std::cout << "Hello world";
+    QTextStream out(stdout);
+    foreach (QString item, selectedItems) {
+        out << item << "\n";
+    }
     delete ui;
 }
 
@@ -29,7 +33,16 @@ void MainWindow::setListObjects(QStringList list)
 
 void MainWindow::on_pushButton_clicked()
 {
-   ui->listWidget->currentItem()->setForeground(Qt::blue);
-   ui->listWidget->currentItem()->setBackground(Qt::gray);
+   ui->listWidget->currentItem()->setForeground(Qt::white);
+   ui->listWidget->currentItem()->setBackground(Qt::blue);
+   if (!selectedItems.contains(ui->listWidget->currentItem()->text())){
+       selectedItems.append(ui->listWidget->currentItem()->text());
+   }
+}
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    this->close();
 }
 
